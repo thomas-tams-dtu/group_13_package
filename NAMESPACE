@@ -10,6 +10,7 @@ importFrom(ggplot2,theme_bw)
 importFrom(stringr,boundary)
 importFrom(stringr,str_count)
 importFrom(stringr,str_split)
+export(generate_dna)
 export(translate_codons)
 export(T_to_U)
 

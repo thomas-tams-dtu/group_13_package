@@ -1,0 +1,36 @@
+Package: dogmaVis
+Type: Package
+Title: Central Dogma Information Flow and Visualization
+Version: 0.1.0
+Authors@R:
+  c(person(given = "Thomas",
+           family = "Tams",
+           role = c("aut", "cre"), # There must be a "cre", but there can only be one
+           email = "s204540@dtu.dk"), 
+    person(given = "Mikkel Niklas",
+           family = "Rasmussen",
+           role = "aut",
+           email = "s193518@dtu.dk"),
+    person(given = "El Mehdi",
+           family = "Baknine",
+           role = "aut",
+           email = "s194533@dtu.dk"),
+    person(given = "Jakob",
+           family = "Højgaard",
+           role = "aut",
+           email = "s194527@dtu.dk",
+    person(given = "Jonathan",
+           family = "Møller",
+           role = "aut",
+           email = "s184243@dtu.dk")
+           )
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: This package will allow the user to transcribe and translate DNA sequence 
+    to protein sequence and visualize the distribution of amino acids.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

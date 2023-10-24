@@ -18,7 +18,7 @@ Authors@R:
     person(given = "Jakob",
            family = "Højgaard",
            role = "aut",
-           email = "s194527@dtu.dk",
+           email = "s194527@dtu.dk"),
     person(given = "Jonathan",
            family = "Møller",
            role = "aut",
@@ -34,4 +34,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.2.3

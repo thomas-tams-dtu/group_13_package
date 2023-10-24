@@ -16,6 +16,6 @@ Amino acid string translated from codons
 Translates a vector of codons to amino acid string
 }
 \examples{
-codons <- c("CAA", "CGA", "CUG", "CCG") # example character vector of codons
+test_codons <- c("CAA", "CGA", "CUG", "CCG") # example character vector of codons
 translate_codons(test_codons)
 }

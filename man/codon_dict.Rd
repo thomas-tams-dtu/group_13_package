@@ -3,7 +3,7 @@
 \docType{data}
 \name{codon_dict}
 \alias{codon_dict}
-\title{Title}
+\title{Key and Values for codon translation to amino acids}
 \format{
 An object of class \code{character} of length 64.
 }
@@ -14,6 +14,6 @@ An object of class \code{character} of length 64.
 codon_dict
 }
 \description{
-Description
+Translates from single codon to amino acid
 }
 \keyword{datasets}

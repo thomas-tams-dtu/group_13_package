@@ -18,9 +18,15 @@ knitr::opts_chunk$set(
 library(dogmaVis)
 ```
 
+## Description of content
+
 DogmaVis is a small package which aims to reproduce the central dogma by allowing transcription of DNA to RNA and translation from RNA to amino acids.
 
 Along with the information flow capabilities, the package also comes with a function for generating random DNA strings and a function for plotting the distribution of amino acids.
+
+## Example using all functions
+
+We run through small example which utilizes the functions of the package
 
 ```{r}
 

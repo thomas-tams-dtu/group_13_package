@@ -8,7 +8,14 @@
 #' @export
 #'
 #' @examples
+#' # As an example here is a randomly generated amino acid string
+#' aa_string <- "SQRMHLPYRFHHPHPLCGKSNRWEAVFVIHEWQGSESTFPKQEWFFHQQSKVGTRNKPWKDG"
 #'
+#' # Plot the count distribution of the amino acids in the string
+#' plot_aa_dist(aa_string)
+#'
+#' @importFrom ggplot2 ggplot aes geom_col theme_bw theme labs
+#' @importFrom stringr str_split boundary str_count
 plot_aa_dist <- function(data){
   amino_acids <- data |>
     stringr::str_split(pattern = stringr::boundary("character"), simplify = TRUE) |>
@@ -28,7 +35,8 @@ plot_aa_dist <- function(data){
     ggplot2::theme(legend.position = "none") +
     ggplot2::labs(
       x = "Amino Acids",
-      y = "Counts"
+      y = "Counts",
+      title = "Count distribution of the amino acids in the sequence"
     )
 
   return(dist_plot)

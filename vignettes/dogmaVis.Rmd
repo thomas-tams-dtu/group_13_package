@@ -1,6 +1,6 @@
 ---
 title: "dogmaVis"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dogmaVis}
   %\VignetteEngine{knitr::rmarkdown}
@@ -28,6 +28,40 @@ Along with the information flow capabilities, the package also comes with a func
 
 We run through small example which utilizes the functions of the package
 
-```{r}
+First we wish to create a DNA string using generate_dna()
 
+```{r}
+dna <- generate_dna(length_of_dna = 150)
+dna
 ```
+
+We wish to translate the DNA to RNA using T_to_U()
+
+```{r}
+rna <- T_to_U(DNA_sequence = dna)
+rna
+```
+
+We want to translate the RNA to amino acids, however first we need to create codons from the RNA sequence using format_to_codons()
+
+```{r}
+rna_codons <- format_to_codons(rna_seq = rna, start = 1)
+rna_codons
+```
+
+These codons can now be translated to amino acids with translate_codons()
+
+```{r}
+amino_acids <- translate_codons(rna_codons)
+amino_acids
+```
+
+At last we want to visualize the distribution of the amino acids using the plot_aa_dist()
+
+```{r}
+plot_aa_dist(amino_acids)
+```
+
+## Other use cases
+
+We see fit that you could use individual functions for bioinformatics work in other pipeslines. Eg. one might want to translate get codons for some other use cases utilizing codons or using the generate_dna() to generate random DNA sequence for other use cases.

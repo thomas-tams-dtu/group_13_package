@@ -24,6 +24,46 @@ DogmaVis is a small package which aims to reproduce the central dogma by allowin
 
 Along with the information flow capabilities, the package also comes with a function for generating random DNA strings and a function for plotting the distribution of amino acids.
 
+## Functions
+
+DogmaVis consists of 5 funtions.
+
+-   generate_dna
+
+-   T_to_U
+
+-   format_to_codons
+
+-   translate_codons
+
+-   plot_aa_dist
+
+#### generate_dna
+
+generate_dna takes a intiger and generates a random DNA string of the given length.
+
+Here are some examples:
+
+generate of length 50
+
+```{r}
+generate_dna(50)
+```
+
+generate of length 200
+
+```{r}
+generate_dna(200)
+```
+
+#### T_to_U
+
+#### format_to_codons
+
+#### translate_codons
+
+#### plot_aa_dist
+
 ## Example using all functions
 
 We run through small example which utilizes the functions of the package
@@ -65,3 +105,7 @@ plot_aa_dist(amino_acids)
 ## Other use cases
 
 We see fit that you could use individual functions for bioinformatics work in other pipeslines. Eg. one might want to translate get codons for some other use cases utilizing codons or using the generate_dna() to generate random DNA sequence for other use cases.
+
+## Main points from disscution
+
+Meaningful names help create quick overview and interpration of funtionality. Having less depency means faster load, less overwriting of functions names/conflict in namespace and less mess when other pakges update.

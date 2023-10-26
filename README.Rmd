@@ -24,6 +24,9 @@ DogmaVis is a small package which aims to reproduce the central dogma by allowin
 
 Along with the information flow capabilities, the package also comes with a function for generating random DNA strings and a function for plotting the distribution of amino acids.
 
+The GitHub repository for this package can be found at:
+https://github.com/thomas-tams-dtu/group_13_package
+
 ## Functions
 
 DogmaVis consists of 5 funtions.

@@ -15,6 +15,9 @@ Along with the information flow capabilities, the package also comes
 with a function for generating random DNA strings and a function for
 plotting the distribution of amino acids.
 
+The GitHub repository for this package can be found at:
+<https://github.com/thomas-tams-dtu/group_13_package>
+
 ## Functions
 
 DogmaVis consists of 5 funtions.
@@ -41,7 +44,7 @@ string of the given length.
 ``` r
 dna <- generate_dna(length_of_dna = 75)
 dna
-#> [1] "GCCGCGTGAACAACTTACCGATGTCAGTCCCGCACTCGTGTCGTAGGTCATGCTAACTGTTCGATTTGCCTGCAC"
+#> [1] "ATTCGGCTGCCAATTCACACGTCTAGGGTAATTTGGATCTGCAGCCCCTAGTTCTTATCAACCAGTTGCAACCAT"
 ```
 
 Next, we wish to translate the DNA to RNA using the function `T_to_U()`.
@@ -51,7 +54,7 @@ RNA sequence simply by substituting all T´s with U´s.
 ``` r
 rna <- T_to_U(DNA_sequence = dna)
 rna
-#> [1] "GCCGCGUGAACAACUUACCGAUGUCAGUCCCGCACUCGUGUCGUAGGUCAUGCUAACUGUUCGAUUUGCCUGCAC"
+#> [1] "AUUCGGCUGCCAAUUCACACGUCUAGGGUAAUUUGGAUCUGCAGCCCCUAGUUCUUAUCAACCAGUUGCAACCAU"
 ```
 
 Once a RNA sequence has been generated, we want to translate the RNA
@@ -63,9 +66,9 @@ condons.
 ``` r
 rna_codons <- format_to_codons(rna_seq = rna, start = 1)
 rna_codons
-#>  [1] "GCC" "GCG" "UGA" "ACA" "ACU" "UAC" "CGA" "UGU" "CAG" "UCC" "CGC" "ACU"
-#> [13] "CGU" "GUC" "GUA" "GGU" "CAU" "GCU" "AAC" "UGU" "UCG" "AUU" "UGC" "CUG"
-#> [25] "CAC"
+#>  [1] "AUU" "CGG" "CUG" "CCA" "AUU" "CAC" "ACG" "UCU" "AGG" "GUA" "AUU" "UGG"
+#> [13] "AUC" "UGC" "AGC" "CCC" "UAG" "UUC" "UUA" "UCA" "ACC" "AGU" "UGC" "AAC"
+#> [25] "CAU"
 ```
 
 Then, these codons can now be translated to amino acids using the
@@ -75,7 +78,7 @@ input and returns as amino acids sequence.
 ``` r
 amino_acids <- translate_codons(rna_codons)
 amino_acids
-#> [1] "AA_TTYRCQSRTRVVGHANCSICLH"
+#> [1] "IRLPIHTSRVIWICSP_FLSTSCNH"
 ```
 
 At last we want to visualize the distribution of the amino acids using

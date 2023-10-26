@@ -1,0 +1,111 @@
+dogmaVis
+================
+
+``` r
+library(dogmaVis)
+```
+
+## Description of content
+
+DogmaVis is a small package which aims to reproduce the central dogma by
+allowing transcription of DNA to RNA and translation from RNA to amino
+acids.
+
+Along with the information flow capabilities, the package also comes
+with a function for generating random DNA strings and a function for
+plotting the distribution of amino acids.
+
+## Functions
+
+DogmaVis consists of 5 funtions.
+
+- `generate_dna`
+
+- `T_to_U`
+
+- `format_to_codons`
+
+- `translate_codons`
+
+- `plot_aa_dist`
+
+## Example using all functions
+
+We run through small example which utilizes the functions of the
+package.
+
+First we wish to create a DNA string using `generate_dna()`. The
+function `generate_dna()` takes a integer and generates a random DNA
+string of the given length.
+
+``` r
+dna <- generate_dna(length_of_dna = 75)
+dna
+#> [1] "GCCGCGTGAACAACTTACCGATGTCAGTCCCGCACTCGTGTCGTAGGTCATGCTAACTGTTCGATTTGCCTGCAC"
+```
+
+Next, we wish to translate the DNA to RNA using the function `T_to_U()`.
+The function `T_to_U()` takes as input a DNA sequence and converts it a
+RNA sequence simply by substituting all T´s with U´s.
+
+``` r
+rna <- T_to_U(DNA_sequence = dna)
+rna
+#> [1] "GCCGCGUGAACAACUUACCGAUGUCAGUCCCGCACUCGUGUCGUAGGUCAUGCUAACUGUUCGAUUUGCCUGCAC"
+```
+
+Once a RNA sequence has been generated, we want to translate the RNA
+sequence into amino acids, however first we need to create codons from
+the RNA sequence using `format_to_codons()`. The function takes a RNA
+sequence as input and where the first condon starts and returns the RNA
+condons.
+
+``` r
+rna_codons <- format_to_codons(rna_seq = rna, start = 1)
+rna_codons
+#>  [1] "GCC" "GCG" "UGA" "ACA" "ACU" "UAC" "CGA" "UGU" "CAG" "UCC" "CGC" "ACU"
+#> [13] "CGU" "GUC" "GUA" "GGU" "CAU" "GCU" "AAC" "UGU" "UCG" "AUU" "UGC" "CUG"
+#> [25] "CAC"
+```
+
+Then, these codons can now be translated to amino acids using the
+`translate_codons()` function. This function takes the RNA condons as
+input and returns as amino acids sequence.
+
+``` r
+amino_acids <- translate_codons(rna_codons)
+amino_acids
+#> [1] "AA_TTYRCQSRTRVVGHANCSICLH"
+```
+
+At last we want to visualize the distribution of the amino acids using
+the `plot_aa_dist()`. This function takes as input a amino acid sequence
+and produces a plot of the count distribution of all the amino acids
+found in the sequence.
+
+``` r
+plot_aa_dist(amino_acids)
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
+
+## Other use cases
+
+We see fit that the individual functions could be used for
+bioinformatics work in other pipelines. One might want to extract the
+amino acid sequence from a DNA or RNA sequence. Another use case to be
+to the `generate_dna()` to generate random DNA sequence for testing a
+computational tool, which works on DNA data. It could be interesting to
+include a function which calculates the GC-content of the DNA sequence.
+Further, it would be nice to a the ability to visualize the the
+different physicochemical properties of the amino acids. This could
+e.g. be a plot showing the distribution of the different amino acid
+physicochemical classes.
+
+## Main points from discussion
+
+Meaningful names help create quick overview and interpretation of the
+functions in the package. Having less dependencies means faster load,
+less overwriting of functions names/conflict in namespace and less mess
+when other packages needs to be update and might change their
+functionality.

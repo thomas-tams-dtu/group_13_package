@@ -18,6 +18,5 @@
 generate_dna <- function(length_of_dna){
   dna_vector <- sample(c("A", "T", "G", "C"), size = length_of_dna, replace = TRUE)
   dba_string <- paste0(dna_vector, collapse = "")
-  print(dba_string)
   return(dba_string)
 }
